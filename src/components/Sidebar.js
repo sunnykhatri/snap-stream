@@ -13,19 +13,21 @@ import {
   MdSyncLock,
   MdVideoLibrary,
 } from "react-icons/md";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Sidebar = () => {
-
-  const isMenuOpen = useSelector((store) => store.app.isMenuOpen)
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   if (!isMenuOpen) return null;
 
   return (
     <div className="col-span-2 text-white">
       <div className="border-b-2 mb-4 border-gray-800">
         <ul>
-          <li className="pb-5 flex items-center text-sm">
-            <MdHome size={24} className="mr-3" /> Home
+          <li className="pb-5">
+            <Link to="/" className="flex items-center text-sm">
+              <MdHome size={24} className="mr-3" /> Home
+            </Link>
           </li>
           <li className="pb-5 flex items-center text-sm">
             <MdMovieFilter size={22} className="mr-3" /> Shorts
